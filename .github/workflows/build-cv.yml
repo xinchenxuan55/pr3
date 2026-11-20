@@ -1,0 +1,60 @@
+name: Build LaTeX CV
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    name: Build PDF and publish release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Compile LaTeX CV
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+
+      - name: Upload PDF workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdf-run-${{ github.run_number }}
+          path: main.pdf
+
+      - name: Create release branch containing the PDF
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          cp main.pdf /tmp/main.pdf
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout --orphan release
+          git rm -rf .
+          cp /tmp/main.pdf main.pdf
+          git add -f main.pdf
+          git commit -m "Update CV PDF"
+          git push --force origin release
+
+      - name: Create GitHub release
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "v${{ github.run_number }}" \
+            --target release \
+            --title "CV v${{ github.run_number }}" \
+            --notes "Automated LaTeX CV build." \
+            "./main.pdf"

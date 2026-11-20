@@ -1,0 +1,61 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+\usepackage[scale=0.82]{geometry}
+\usepackage{lmodern}
+
+\name{Chenxuan}{Xin}
+\title{Data Engineering and Machine Learning}
+\email{3155185362@qq.com}
+\social[github]{xinchenxuan55}
+\extrainfo{Zhejiang University of Science and Technology}
+\extrainfo{Course project portfolio, 2026}
+
+\begin{document}
+\makecvtitle
+
+\vspace{-3mm}
+\section{Profile}
+\cvitem{}{Graduate student in Data Engineering with hands-on experience in Python, statistical modelling, version control, and automated software delivery. Interested in building reproducible machine-learning systems that turn changing data into validated, versioned products.}
+
+\section{Education}
+\cventry{2026--Present}{Graduate Data Engineering Coursework}{Zhejiang University of Science and Technology}{}{}{%
+\begin{itemize}
+  \item Studying data engineering, linear and logistic regression, model evaluation, and production workflows.
+  \item Building end-to-end projects that combine reproducible analysis with collaborative Git practices.
+\end{itemize}
+}
+
+\section{Selected Projects}
+\cventry{2026}{Automated Linear-Regression Release Pipeline}{Python, scikit-learn, GitHub Actions}{}{}{%
+\begin{itemize}
+  \item Built a data-driven training workflow that detects modifications to a CSV dataset and retrains a linear-regression model automatically.
+  \item Packaged model coefficients as a downloadable release asset and maintained a clean, model-only release branch.
+  \item Added artifact retention, permission scoping, and pull-request validation to make delivery repeatable.
+\end{itemize}
+}
+\vspace{1mm}
+\cventry{2026}{Git and Collaborative Development Practice}{Git, GitHub, SSH}{}{}{%
+\begin{itemize}
+  \item Configured secure SSH authentication and verified repository access from a Windows development environment.
+  \item Practised cloning, branch management, conflict resolution, pull requests, and remote repository maintenance.
+\end{itemize}
+}
+
+\section{Technical Skills}
+\cvitem{Languages}{Python, SQL, Bash, Git}
+\cvitem{Data and ML}{Pandas, NumPy, scikit-learn, linear regression, model evaluation}
+\cvitem{Engineering}{GitHub Actions, CI/CD, reproducible builds, command-line workflows}
+\cvitem{Web and Tools}{Markdown, Jupyter Notebook, LaTeX, VS Code}
+\cvitem{Strengths}{Reproducibility, documentation, debugging, incremental delivery}
+
+\section{Languages}
+\cvitem{Mandarin}{Native proficiency}
+\cvitem{English}{Academic reading and technical communication}
+
+\section{Contact}
+\cvitem{Email}{\href{mailto:3155185362@qq.com}{3155185362@qq.com}}
+\cvitem{GitHub}{\href{https://github.com/xinchenxuan55}{github.com/xinchenxuan55}}
+
+\end{document}
