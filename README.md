@@ -1,8 +1,8 @@
 # LaTeX CV with GitHub Actions
 
-This repository stores a LaTeX build wrapper for the CV source and builds it
-automatically with GitHub Actions. The original PDF pages are embedded through
-the `pdfpages` package so the layout remains unchanged.
+This repository contains the CV as editable LaTeX source and builds it
+automatically with GitHub Actions. The source was reconstructed from the
+applicant's existing CV and keeps its one-page, two-column structure.
 
 ## Pipeline
 
@@ -16,6 +16,6 @@ build and publish a new release.
 
 ## Source
 
-- `main.tex`: LaTeX build wrapper
-- `source_cv.pdf`: original CV pages
+- `main.tex`: editable LaTeX CV source
+- `photo.png`: portrait used by the header
 - `.github/workflows/build-cv.yml`: build and release automation
