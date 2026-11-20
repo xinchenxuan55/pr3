@@ -8,8 +8,7 @@ automatically with GitHub Actions.
 1. Check out the repository.
 2. Compile `main.tex` into `main.pdf`.
 3. Upload the PDF as a workflow artifact.
-4. Update the PDF-only `release` branch.
-5. Create a GitHub Release with `main.pdf` attached.
+4. Create a GitHub Release with `main.pdf` attached.
 
 Pull requests compile the CV without creating a release. Pushes to `main`
 build and publish a new release.

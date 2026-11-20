@@ -34,27 +34,13 @@ jobs:
           name: cv-pdf-run-${{ github.run_number }}
           path: main.pdf
 
-      - name: Create release branch containing the PDF
-        if: github.event_name != 'pull_request'
-        run: |
-          set -euo pipefail
-          cp main.pdf /tmp/main.pdf
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git checkout --orphan release
-          git rm -rf .
-          cp /tmp/main.pdf main.pdf
-          git add -f main.pdf
-          git commit -m "Update CV PDF"
-          git push --force origin release
-
       - name: Create GitHub release
         if: github.event_name != 'pull_request'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release create "v${{ github.run_number }}" \
-            --target release \
+            --target main \
             --title "CV v${{ github.run_number }}" \
             --notes "Automated LaTeX CV build." \
             "./main.pdf"
