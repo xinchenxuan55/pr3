@@ -1,183 +1,141 @@
 \documentclass[10pt,a4paper]{article}
-\usepackage[margin=13mm,top=12mm,bottom=12mm]{geometry}
+\usepackage[margin=20mm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}
-\usepackage{xcolor}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage{array}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-
-\definecolor{ink}{HTML}{0B0F14}
-\definecolor{muted}{HTML}{526272}
-\definecolor{rule}{HTML}{B9BEC3}
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\setlength{\tabcolsep}{0pt}
 \setlist[itemize]{
-  leftmargin=1.25em,
-  itemsep=0pt,
-  topsep=1pt,
+  leftmargin=1.35em,
+  itemsep=1.5pt,
+  topsep=2pt,
   parsep=0pt,
   partopsep=0pt
 }
-\renewcommand{\arraystretch}{1.08}
-
-\newcommand{\cvsection}[1]{%
-  \vspace{2.6mm}%
-  {\fontsize{10.2}{12}\selectfont\bfseries\color{ink}\MakeUppercase{#1}}\par
-  \vspace{0.7mm}%
-  {\color{rule}\hrule height 0.35pt}%
-  \vspace{1.3mm}%
+\setlist[itemize,2]{
+  label=--,
+  leftmargin=1.2em,
+  itemsep=0pt,
+  topsep=1pt
 }
 
-\newcommand{\role}[2]{%
-  \noindent
-  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedleft\arraybackslash}p{0.30\linewidth}@{}}
-    \textbf{#1} & \textit{#2}
-  \end{tabularx}
+\newcommand{\projectheading}[2]{%
+  \item \textbf{#1}\hfill #2\vspace{1pt}
+}
+
+\newcommand{\skill}[2]{%
+  \item \textbf{#1}: #2
 }
 
 \begin{document}
-\color{ink}
 
-\noindent
-\begin{minipage}[t]{0.74\textwidth}
-  {\fontsize{23}{25}\selectfont\bfseries CHENXUAN XIN}\par
-  \vspace{1.5mm}
-  {\fontsize{9.2}{11}\selectfont\bfseries SINO-FRENCH JOINT MASTER'S PROGRAMME}\par
-  \vspace{0.7mm}
-  {\fontsize{9.2}{11}\selectfont\color{muted}ELECTRONIC INFORMATION\; |\; SHANGHAI UNIVERSITY}\par
-  \vspace{1.8mm}
-  {\fontsize{8.8}{11}\selectfont Jiaozuo, Henan, China\; |\; +86 152 3912 1892}\par
-  {\fontsize{8.8}{11}\selectfont \href{mailto:15239121892@163.com}{15239121892@163.com}}
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.22\textwidth}
-  \raggedleft
-  \includegraphics[width=25mm]{photo.png}
-\end{minipage}
+\begin{center}
+  {\LARGE\bfseries Chenxuan Xin}\\[5pt]
+  {\small
+    Phone: +86 152 3912 1892 \quad | \quad
+    Email: \href{mailto:15239121892@163.com}{15239121892@163.com}}\\[2pt]
+  {\small Jiaozuo, Henan, China \quad | \quad Shanghai University}
+\end{center}
 
-\vspace{4mm}
-\noindent
-\begin{minipage}[t]{0.685\textwidth}
-\fontsize{8.85}{11.15}\selectfont
-
-\cvsection{Profile}
+\vspace{3pt}
 Master's student in the Sino-French joint programme in Electronic Information at
-Shanghai University, with a B.Eng. in Electrical Engineering and Automation. My
-project work combines computer vision, autonomous navigation and MATLAB-based
-mathematical modeling, with an emphasis on translating engineering problems
-into tested technical solutions.
+Shanghai University, with a B.Eng. in Electrical Engineering and Automation.
+My work combines computer vision, autonomous navigation and MATLAB-based
+mathematical modeling, with an emphasis on translating engineering problems into
+tested technical solutions.
 
-\cvsection{Education}
-\role{Shanghai University}{2026 - Present}
-\textit{Master of Engineering, Electronic Information\; |\; Sino-French joint programme}\par
-\vspace{1mm}
-\role{Civil Aviation University of China}{2021 - 2025}
-\textit{Bachelor of Engineering, Electrical Engineering and Automation}\par
-GPA: 3.60/4.0\; |\; Weighted average: 84.07/100
+\section{Education}
 \begin{itemize}
-  \item Relevant coursework: C Programming (97), Control Theory and Engineering
-        (87), Signals and Systems (90), Fundamentals of Electrical Engineering
-        (91), Advanced Mathematics (91), Linear Algebra (90), Complex Functions
-        and Integral Transforms (90).
+  \item \textbf{Shanghai University} -- M.Eng. in Electronic Information
+        \hfill Sep 2026 -- Present
+  \item \textbf{Civil Aviation University of China} -- B.Eng. in Electrical
+        Engineering and Automation \hfill Sep 2021 -- Jun 2025
 \end{itemize}
 
-\cvsection{Selected Projects}
-\role{Driver Behavior Anomaly Monitoring System}{Undergraduate thesis}
+GPA: 3.60/4.0 \quad | \quad Weighted average: 84.07/100
+
+Relevant coursework: C Programming (97), Control Theory and Engineering (87),
+Signals and Systems (90), Fundamentals of Electrical Engineering (91), Advanced
+Mathematics (91), Linear Algebra (90), Complex Functions and Integral Transforms
+(90).
+
+\section{Project Experience}
 \begin{itemize}
-  \item Annotated 4,000 facial images for four eye- and mouth-state classes with
-        LabelImg and trained a YOLOv8 fatigue-detection model, achieving 0.99
-        mAP and 0.98 F1-score on the test set.
-  \item Used MediaPipe to extract 468 facial landmarks and built a calibration
-        baseline that flags sustained head-down or turned-head postures when
-        frame or angle thresholds are exceeded.
-  \item Developed a PySide6 desktop application for video input, live detection
-        and alarm calibration, with anomaly logs stored in SQLite.
+  \projectheading{Driver Behavior Anomaly Monitoring System}{Undergraduate thesis}
+  \begin{itemize}
+    \item Annotated 4,000 facial images for four eye- and mouth-state classes
+          with LabelImg and trained a YOLOv8 fatigue-detection model, achieving
+          0.99 mAP and 0.98 F1-score on the test set.
+    \item Used MediaPipe to extract 468 facial landmarks and built a calibration
+          baseline that flags sustained head-down or turned-head postures when
+          frame or angle thresholds are exceeded.
+    \item Developed a PySide6 desktop application for video input, live
+          detection and alarm calibration, with anomaly logs stored in SQLite.
+  \end{itemize}
+
+  \projectheading{Indoor Temperature Distribution Model}{Mathematical modeling competition}
+  \begin{itemize}
+    \item Formulated a two-dimensional heat-conduction model for winter heating,
+          deriving radiator-temperature and water-flow boundary conditions and
+          the exterior-wall average-temperature boundary from heat-transfer
+          principles.
+    \item Solved the temperature field with finite differences in MATLAB;
+          modeled inlet-to-outdoor temperature response using Tianjin climate
+          data and quantified the energy-saving rate of the proposed control
+          strategy.
+    \item Led model construction and paper writing as a core team member, and
+          produced the project figures.
+  \end{itemize}
+
+  \projectheading{AGV Path Planning and Dynamic Obstacle Avoidance}{Course design project}
+  \begin{itemize}
+    \item Improved A$^{*}$ path planning for complex aviation-material warehouse
+          layouts by removing redundant nodes and smoothing routes.
+    \item Integrated the improved A$^{*}$ planner with Dynamic Window Approach
+          (DWA), then compared and validated the combined method in MATLAB
+          simulations.
+    \item Tested the planner against both static and moving obstacles to verify
+          its dynamic avoidance behavior.
+  \end{itemize}
 \end{itemize}
 
-\vspace{1.2mm}
-\role{Indoor Temperature Distribution Model}{Mathematical modeling competition}
+\section{Awards}
 \begin{itemize}
-  \item Formulated a two-dimensional heat-conduction model for winter heating,
-        deriving radiator-temperature and water-flow boundary conditions and
-        the exterior-wall average-temperature boundary from heat-transfer
-        principles.
-  \item Solved the temperature field with finite differences in MATLAB;
-        modeled inlet-to-outdoor temperature response using Tianjin climate data
-        and quantified the energy-saving rate of the proposed control strategy.
-  \item Led model construction and paper writing as a core team member, and
-        produced the project figures.
-\end{itemize}
-
-\vspace{1.2mm}
-\role{AGV Path Planning and Dynamic Obstacle Avoidance}{Course design project}
-\begin{itemize}
-  \item Improved A$^{*}$ path planning for complex aviation-material warehouse
-        layouts by removing redundant nodes and smoothing routes.
-  \item Integrated the improved A$^{*}$ planner with Dynamic Window Approach
-        (DWA), then compared and validated the combined method in MATLAB
-        simulations.
-  \item Tested the planner against both static and moving obstacles to verify
-        its dynamic avoidance behavior.
-\end{itemize}
-
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.275\textwidth}
-\fontsize{8.25}{10.2}\selectfont
-
-\cvsection{Languages}
-\textbf{Chinese}\; Native\par
-\textbf{English}\; CET-4 and CET-6
-
-\cvsection{Technical Skills}
-\textbf{Programming}\par
-Python, MATLAB, C
-\vspace{1.5mm}
-
-\textbf{Computer Vision}\par
-YOLOv8, MediaPipe, LabelImg
-\vspace{1.5mm}
-
-\textbf{Applications}\par
-PySide6, SQLite
-\vspace{1.5mm}
-
-\textbf{Engineering Tools}\par
-Proteus, Keil uVision
-\vspace{1.5mm}
-
-\textbf{Office}\par
-Word, PowerPoint
-
-\cvsection{Leadership}
-\textbf{Publicity Director}\par
-\textit{Mathematical Modeling Club\; |\; 2022 - 2023}
-\begin{itemize}
-  \item Managed the club's official WeChat platform, writing and publishing
-        20+ original posts on competitions, modeling methods and event
-        summaries.
-\end{itemize}
-
-\cvsection{Awards}
-\begin{itemize}
-  \item People's Scholarship, Second Prize, 2022
-  \item People's Scholarship, Second Prize, 2023
+  \item APMCM Asia-Pacific Mathematical Contest in Modeling -- Second Prize,
+        Dec 2024
+  \item People's Scholarship, Second Prize -- 2022 and 2023
   \item Second Prize, 3rd Civil Aviation University of China Mathematical
         Modeling Competition
 \end{itemize}
 
-\cvsection{Interests}
-Engineering modeling, computer vision and autonomous systems
+\section{Technical Skills}
+\begin{itemize}
+  \skill{Programming}{Python, MATLAB, C}
+  \skill{Computer Vision}{YOLOv8, MediaPipe, LabelImg}
+  \skill{Applications}{PySide6, SQLite}
+  \skill{Engineering Tools}{Proteus, Keil uVision}
+  \skill{Office}{Word, PowerPoint}
+\end{itemize}
 
-\end{minipage}
+\section{Leadership}
+\begin{itemize}
+  \item \textbf{Publicity Director}, Mathematical Modeling Club
+        \hfill 2022 -- 2023
+  \begin{itemize}
+    \item Managed the club's official WeChat platform, writing and publishing
+          20+ original posts on competitions, modeling methods and event
+          summaries.
+  \end{itemize}
+\end{itemize}
+
+\section{Languages}
+\begin{itemize}
+  \item Chinese: Native
+  \item English: CET-4 and CET-6
+\end{itemize}
 
 \end{document}

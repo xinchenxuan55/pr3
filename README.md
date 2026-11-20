@@ -2,7 +2,8 @@
 
 This repository contains the CV as editable LaTeX source and builds it
 automatically with GitHub Actions. The source was reconstructed from the
-applicant's existing CV and keeps its one-page, two-column structure.
+applicant's existing CV using a classic LaTeX article layout with numbered
+sections and native text content.
 
 ## Pipeline
 
@@ -17,5 +18,4 @@ build and publish a new release.
 ## Source
 
 - `main.tex`: editable LaTeX CV source
-- `photo.png`: portrait used by the header
 - `.github/workflows/build-cv.yml`: build and release automation
